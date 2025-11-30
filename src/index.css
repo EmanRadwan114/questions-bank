@@ -4,5 +4,7 @@
   body {
     font-family: "Oswald", sans-serif;
     font-size: 16px;
+    background-color: var(--color-fuchsia-100);
+    color: var(--color-gray-800);
   }
 }
