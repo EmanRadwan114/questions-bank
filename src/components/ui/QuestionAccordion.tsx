@@ -49,7 +49,7 @@ const QuestionAccordion: React.FC<IProps> = ({
       <header
         className={`flex justify-between items-start cursor-pointer px-3 py-2 transition-colors duration-500 ${
           isSelected
-            ? "bg-fuchsia-300 rounded-t-md "
+            ? "bg-fuchsia-950/70 text-white rounded-t-md "
             : "bg-gray-300 rounded-sm "
         }`}
         onClick={handleSelect}

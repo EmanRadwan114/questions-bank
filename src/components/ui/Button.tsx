@@ -16,7 +16,7 @@ const Button: React.FC<IProps> = ({
       className={
         className
           ? className
-          : `bg-fuchsia-300 px-3 py-1 capitalize rounded-sm cursor-pointer disabled:cursor-not-allowed disabled:opacity-70 text-lg ${additionalClassName}`
+          : `bg-fuchsia-950/70 text-white px-3 py-1 capitalize rounded-sm cursor-pointer disabled:cursor-not-allowed disabled:opacity-60 text-lg ${additionalClassName}`
       }
       {...rest}
     >
