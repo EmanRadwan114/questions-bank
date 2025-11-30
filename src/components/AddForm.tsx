@@ -20,7 +20,10 @@ const AddForm: React.FC = () => {
 
   const handleSubmit = () => {
     if (newQuestion.answer !== "" && newQuestion.question !== "") {
-      setQuestions((prev) => [...prev, { ...newQuestion, id: uuidv4() }]);
+      setQuestions((prev) => [
+        ...prev,
+        { ...newQuestion, id: uuidv4(), priority: false },
+      ]);
       toast.success("Question is added successfully!");
       setNewQuestion({ question: "", answer: "" });
     }

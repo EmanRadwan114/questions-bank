@@ -11,8 +11,6 @@ const QuestionsList: React.FC = () => {
     null
   );
 
-  console.log(selectedQuestion);
-
   return (
     <>
       {questions.length ? (
@@ -24,7 +22,7 @@ const QuestionsList: React.FC = () => {
                 key={item.id}
                 question={item}
                 onSelect={setSelectedQuestion}
-                selectedQuestion={selectedQuestion}
+                selectedQuestion={selectedQuestion ?? questions[0]}
               />
             ))}
           </div>

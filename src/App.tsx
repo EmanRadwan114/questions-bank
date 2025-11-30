@@ -6,7 +6,13 @@ import SiteHeader from "./components/SiteHeader";
 import { QuestionsContext } from "./contexts/QuestionsContext";
 
 function App() {
-  const { questions } = useContext(QuestionsContext);
+  const { questions, setQuestions } = useContext(QuestionsContext);
+
+  useEffect(() => {
+    if (localStorage.getItem("questions-bank")) {
+      setQuestions(JSON.parse(localStorage.getItem("questions-bank")!));
+    }
+  }, [setQuestions]);
 
   useEffect(() => {
     localStorage.setItem("questions-bank", JSON.stringify(questions));
