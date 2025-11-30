@@ -57,7 +57,7 @@ const QuestionAccordion: React.FC<IProps> = ({
         <h3 className="capitalize text-xl font-semibold flex gap-x-2 items-center">
           <span>{question.question}</span>
           {question.priority && (
-            <span className="inline-block bg-red-800 w-6 h-2 rounded-md"></span>
+            <span className="inline-block bg-red-300 w-6 h-2 rounded-md"></span>
           )}
         </h3>
         <ChevronUp
