@@ -20,12 +20,12 @@ const QuestionAccordion: React.FC<IProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-md">
+    <div className="bg-white rounded-sm shadow-md">
       <header
         className={`flex justify-between items-center cursor-pointer px-3 py-2 transition-colors duration-500 ${
           isSelected
             ? "bg-fuchsia-300 rounded-t-md "
-            : "bg-gray-300 rounded-md "
+            : "bg-gray-300 rounded-sm "
         }`}
         onClick={handleSelect}
       >

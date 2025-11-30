@@ -17,7 +17,7 @@ const QuestionsContext = createContext<IContext>({
 
 const QuestionsContextProvide: React.FC<IProps> = ({ children }) => {
   const [questions, setQuestions] = useState<IQuestion[]>([
-    { id: 1, question: "Question 1", answer: "answer 1" },
+    // { id: 1, question: "Question 1", answer: "answer 1" },
   ]);
 
   return (
