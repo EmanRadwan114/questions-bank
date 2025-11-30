@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import Button from "./ui/Button";
 import { QuestionsContext } from "../contexts/QuestionsContext";
 import { v4 as uuidv4 } from "uuid";
+import { toast } from "react-toastify";
 
 const AddForm: React.FC = () => {
   const { setQuestions } = useContext(QuestionsContext);
@@ -20,22 +21,24 @@ const AddForm: React.FC = () => {
   const handleSubmit = () => {
     if (newQuestion.answer !== "" && newQuestion.question !== "") {
       setQuestions((prev) => [...prev, { ...newQuestion, id: uuidv4() }]);
+      toast.success("Question is added successfully!");
+      setNewQuestion({ question: "", answer: "" });
     }
   };
 
   return (
-    <div className="flex flex-col gap-y-2 bg-white shadow-xl p-3 rounded-sm">
+    <div className="flex flex-col gap-y-2 bg-white shadow-lg p-3 rounded-sm">
       <input
         type="text"
-        className="border-2 border-gray-700 w-full rounded-sm px-3 py-1.5 placeholder:text-gray-600"
-        placeholder="Enter Your Question..."
+        className="border border-gray-700 w-full rounded-sm px-3 py-1.5 placeholder:text-gray-600"
+        placeholder="Enter The Question..."
         name="question"
         value={newQuestion?.question}
         onChange={handleChange}
       />
       <textarea
-        className="border-2 border-gray-700 w-full rounded-sm px-3 py-1.5 placeholder:text-gray-600"
-        placeholder="Enter Your Answer..."
+        className="border border-gray-700 w-full rounded-sm px-3 py-1.5 placeholder:text-gray-600"
+        placeholder="Enter The Answer..."
         name="answer"
         value={newQuestion?.answer}
         onChange={handleChange}
