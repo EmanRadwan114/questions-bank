@@ -22,7 +22,7 @@ const QuestionsList: React.FC = () => {
                 key={item.id}
                 question={item}
                 onSelect={setSelectedQuestion}
-                selectedQuestion={selectedQuestion ?? questions[0]}
+                selectedQuestion={selectedQuestion}
               />
             ))}
           </div>

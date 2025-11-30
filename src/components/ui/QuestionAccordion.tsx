@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import type { IQuestion } from "../../types/interfaces";
 import { ChevronUp, Trash2 } from "lucide-react";
 import { QuestionsContext } from "../../contexts/QuestionsContext";
@@ -17,9 +17,13 @@ const QuestionAccordion: React.FC<IProps> = ({
   selectedQuestion,
 }) => {
   //———————————————————————————————— state ————————————————————————————————
-  const { setQuestions } = useContext(QuestionsContext);
+  const { setQuestions, questions } = useContext(QuestionsContext);
 
   const isSelected = selectedQuestion?.id === question.id;
+
+  useEffect(() => {
+    onSelect(() => (questions.length ? questions[0] : null));
+  }, []);
 
   //———————————————————————————————— handlers ————————————————————————————————
   const handleSelect = () => {
